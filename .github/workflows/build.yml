@@ -31,7 +31,7 @@ jobs:
         run: git add --force dist/*
 
       - name: Commit changed files
-        run: git commit -m "Generate `dist` from commit ${{ github.event.head_commit.url }}"
+        run: git commit -m "Generate dist from commit ${{ github.event.head_commit.url }}"
 
       - name: Push code
         run: git push
