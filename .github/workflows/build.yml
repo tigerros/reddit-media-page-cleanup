@@ -8,8 +8,7 @@ on:
 
 jobs:
   build:
-    # Windows for 7zip
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     permissions:
       contents: write
