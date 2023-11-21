@@ -18,4 +18,4 @@ mkdir -p ./$dist
 # THIS DOESN'T WORK RIGHT NOW. See <https://crbug.com/1498558>
 # chrome --pack-extension ./$src/chromium
 
-echo "Finished"
+echo "Build finished"

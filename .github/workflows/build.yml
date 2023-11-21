@@ -27,11 +27,8 @@ jobs:
           git config user.name "Builder"
           git config user.email "tigerros.gh@gmail.com"
 
-      - name: List files
-        run: ls -r
-
       - name: Add dist
-        run: git add dist/*
+        run: git add --force dist/*
 
       - name: Commit changed files
         run: git commit -m "Generate chromium.zip from commit ${{ github.event.head_commit.url }}"
