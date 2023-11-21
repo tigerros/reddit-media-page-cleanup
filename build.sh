@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 set -x -e
 
 src="src"
@@ -19,3 +17,5 @@ mkdir -p ./$dist
 # Chrome of course has stupid metadata so we can't use 7zip.
 # THIS DOESN'T WORK RIGHT NOW. See <https://crbug.com/1498558>
 # chrome --pack-extension ./$src/chromium
+
+echo "Finished"
