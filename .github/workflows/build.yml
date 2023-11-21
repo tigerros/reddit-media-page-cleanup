@@ -1,0 +1,38 @@
+name: Build
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    # Windows for 7zip
+    runs-on: windows-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Add permissions to build script
+        run: chmod +x ./build.sh
+
+      - name: Build archives
+        run: ./build.sh
+
+      - name: Configure git name and email
+        run: |
+          git config user.name "Builder"
+          git config user.email "tigerros.gh@gmail.com"
+
+      - name: Stage chromium/chromium.zip
+        run: git add dist/chromium.zip
+
+      - name: Commit changed files
+        run: git commit -m "Generate chromium.zip from commit ${{ github.event.head_commit.url }}"
+
+      - name: Push code
+        run: git push

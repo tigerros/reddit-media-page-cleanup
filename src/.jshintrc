@@ -1,0 +1,15 @@
+{
+  "moz": true,
+  "globalstrict": true,
+  "predef": ["browser", "URL"],
+  "curly": true,
+  "bitwise": true,
+  "eqeqeq": true,
+  "futurehostile": true,
+  "latedef": true,
+  "nocomma": true,
+  "nonbsp": true,
+  "nonew": true,
+  "shadow": false,
+  "plusplus": true
+}

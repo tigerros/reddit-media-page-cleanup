@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Reddit media page cleanup",
+  "version": "1.0",
+  "description": "Shows only the image file on Reddit media pages (such as \"i.redd.it\"), and redirects \"preview.redd.it\" links to the high-quality \"i.redd.it\". This improves loading speed, removes trackers and fixes the broken zooming.",
+  "homepage_url": "https://github.com/tigerros/reddit-media-page-cleanup",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://i.redd.it/*",
+    "*://preview.redd.it/*",
+    "*://external-preview.redd.it/*",
+    "*://www.reddit.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "reddit-media-page-cleanup@tigerros.github.io"
+    }
+  }
+}
