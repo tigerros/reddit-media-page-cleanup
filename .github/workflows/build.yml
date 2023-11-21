@@ -28,8 +28,8 @@ jobs:
           git config user.name "Builder"
           git config user.email "tigerros.gh@gmail.com"
 
-      - name: Stage chromium/chromium.zip
-        run: git add dist/chromium.zip
+      - name: Add dist
+        run: git add dist/*
 
       - name: Commit changed files
         run: git commit -m "Generate chromium.zip from commit ${{ github.event.head_commit.url }}"
