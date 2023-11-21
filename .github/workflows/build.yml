@@ -28,6 +28,9 @@ jobs:
           git config user.name "Builder"
           git config user.email "tigerros.gh@gmail.com"
 
+      - name: List files
+        run: ls -r
+
       - name: Add dist
         run: git add dist/*
 
