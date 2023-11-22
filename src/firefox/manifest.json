@@ -1,5 +1,6 @@
 {
   "manifest_version": 2,
+  "author": "Leonard D.",
   "name": "Reddit media page cleanup",
   "version": "1.0",
   "description": "Shows only the image file on Reddit media pages (such as \"i.redd.it\"), and redirects \"preview.redd.it\" links to the high-quality \"i.redd.it\". This improves loading speed, removes trackers and fixes the broken zooming.",

@@ -1,14 +1,25 @@
-# Reddit media page cleanup
-## Features
+<a style="position: fixed; bottom: 1em; right: 1em;" href="#table-of-contents">Back to top</a>
 
-- Shows only the image file on `i.redd.it`, `preview.redd.it`, `external-preview.redd.it` and `reddit.com/media?url=IMAGE_URL` pages.
+### Table of contents
+
+- [Features](#features)
+- [Comparison](#comparison)
+- [Installation](#installation)
+  - [Firefox](#firefox)
+  - [Chromium](#chromium)
+  - [Building from the source code](#building-from-the-source-code)
+- [How it works](#how-it-works)
+
+# Features
+
+- Shows only the image file on `i.redd.it`, `preview.redd.it`, `external-preview.redd.it` and `reddit.com/media?url=IMAGE_URL` (only on Firefox) pages.
 This improves loading speed, removes trackers and fixes the broken zooming.
 - Redirects `preview.redd.it` to the `i.redd.it` equivalent.
 This gets you the highest quality image, and you can download a PNG/JPEG instead of the default `preview.redd.it` WEBP (which is not a traditional image file).
 - Blocks an icon file request on the image file pages, since they don't have one.
 The browser requests an icon for every page, but since they don't have one, blocking is a *tiny* bit faster.
 
-## Comparison
+# Comparison
 
 Without extension:
 
@@ -45,22 +56,20 @@ With extension:
 
 Only 2 requests this time, one of which is blocked (the non-existent favicon.ico).
 
-## Installation
+# Installation
 
-### Firefox
+## Firefox
 
-- [Add-on store](https://addons.mozilla.org/en-US/firefox/addon/reddit-media-page-cleanup/)
+Get it from the [add-on store](https://addons.mozilla.org/en-US/firefox/addon/reddit-media-page-cleanup/).
 
-For manual installation, visit the [releases page].
-
-### Chromium
+## Chromium
 
 *This applies to other Chromium browsers, such as Microsoft Edge, Opera or Brave.
 This tutorial is for Chrome, but it should work for the others with some minor differences.
 For example, instead of `chrome://extensions`, you use `edge://extensions` on Edge.*
 
-1. Download `reddit-media-page-cleanup-chromium.zip` from the [latest release].
-2. Extract it. **Don't delete it, it will be uninstalled if you do.**
+1. Download `reddit-media-page-cleanup-chromium.release.zip` from the [latest release].
+2. Extract it, you should get a folder called `chromium.min`. **Don't delete it, it will be uninstalled if you do.**
 3. Go to `chrome://extensions`.
 4. Turn on "Developer mode" in the top-right corner.
 5. Click "Load unpacked" in the top-left corner.
@@ -68,5 +77,21 @@ For example, instead of `chrome://extensions`, you use `edge://extensions` on Ed
 
 The Chrome Web Store has a $5 fee for uploading an extension, so that's why I didn't bother uploading it there.
 
-[releases page]: https://github.com/tigerros/reddit-media-page-cleanup/releases
+## Building from the source code
+
+Clone the repo and run the [`build.sh`](https://github.com/tigerros/reddit-media-page-cleanup/blob/master/build.sh) file.
+However, it uses binaries which it doesn't install automatically, so you need to install them yourself.
+They are listed in the file.
+
+# How it works
+
+The extension simply removes the `Accept` header from the HTTP requests to the aforementioned pages.
+The `Accept` header on those pages defaults to an image, meaning that an image file will be returned,
+rather than the Reddit document.
+
+When it comes to `reddit.com/media?url=IMAGE_URL`, the extension redirects to the `IMAGE_URL`,
+and then removes the headers. Note that this redirect does not work on Chromium,
+because it uses a different API which has absurdly strict restrictions.
+Maybe I'm just not doing it right though.
+
 [latest release]: https://github.com/tigerros/reddit-media-page-cleanup/releases/latest

@@ -16,7 +16,7 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": { "host": "i.redd.it", "query": "" }
+        "transform": { "host": "i.redd.it" }
       }
     },
     "condition": { "urlFilter": "||preview.redd.it/*", "resourceTypes": ["main_frame"] }
@@ -43,16 +43,5 @@
     "priority": 20,
     "action": { "type": "block" },
     "condition": { "urlFilter": "https://external-preview.redd.it/favicon.ico", "resourceTypes": ["image"] }
-  },
-  {
-    "id": 6,
-    "priority": 10,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "regexSubstitution": "https://\\${domain}.redd.it/\\2?\\3"
-      }
-    },
-    "condition": { "regexFilter": "^(?:.*?)www\\.reddit\\.com/media\\?url=https(?:%3A|:)(?://|%2F%2F)(?<domain>.+?)\\.redd\\.it%2F(.*?)(?:&|%3F)(.*)", "resourceTypes": ["main_frame"] }
   }
 ]

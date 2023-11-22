@@ -15,8 +15,6 @@ const WWW_REDDIT_COM = "www.reddit.com";
 /** @type {string} */
 const MEDIA_PATH = "/media";
 
-// ^(?:.*?)www\.reddit\.com\/media\?url=https(?:%3A|:)(?:\/\/|%2F%2F)(.+?)\.redd\.it(?:\/|%2F)(.*?)(?:\?|%3F)(\w+)(=|%3D)(.+?)(&|%26)(\w+)(=|%3D)(.+?)
-
 /**
  * These are the only URLs which will be intercepted in the first place.
  * @type {(string)[]}
@@ -60,7 +58,7 @@ function rewriteAcceptHeader(request) {
         // If the user goes to "https://i.redd.it/favicon.ico", `request.type` will not be "image".
         // However, if the user went to a picture hosted on "i.redd.it", the `request.type` will be "image".
         if ((url.hostname === I_REDD_IT || url.hostname === EXTERNAL_PREVIEW_REDD_IT) && url.pathname === "/favicon.ico" && request.type === "image") {
-            return { redirectUrl: "moz" };
+            return { cancel: true };
         }
 
         return {};

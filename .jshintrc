@@ -11,5 +11,7 @@
   "nonbsp": true,
   "nonew": true,
   "shadow": false,
-  "plusplus": true
+  "plusplus": true,
+  "undef": true,
+  "unused": true
 }

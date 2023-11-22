@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.3",
+    "rollup": "^3.29.2"
+  }
+}
