@@ -19,7 +19,7 @@ The browser requests an icon for every page, but since they don't have one, bloc
 
 # Comparison
 
-*This was tested in a private window.
+*This was tested in a private window with no cache.*
 
 Without extension:
 
