@@ -19,7 +19,7 @@ The browser requests an icon for every page, but since they don't have one, bloc
 
 # Comparison
 
-*This was tested in a private window with no cache.*
+*This was tested in a private window with no cache. The page in question is https://i.redd.it/dn4ox5cny11c1.jpg.*
 
 Without extension:
 
@@ -47,8 +47,8 @@ It logs:
 - Who viewed it (what account).
 - If you have AdBlock.
 
-I deducted this from the information that was being sent, but the info was very clearly labeled.
-You can check this tracker if you go to the network log and search for `events`.
+I "guessed" this from the information that was being sent, but the info was very clearly labeled.
+You can check this tracker if you go to this page (link above) and search for `events`.
 
 ---
 
@@ -66,7 +66,15 @@ With extension:
 ![With extension page screenshot](with-extension-page.png)
 </details>
 
-Only 2 requests this time, one of which is blocked (the non-existent favicon.ico).
+Only 2 requests this time, these are:
+
+- The image file.
+- The `favicon.ico` file which is automatically requested by the browser. It's blocked, because it doesn't exist anyway.
+
+The amount of data and especially load time is reduced.
+Another advantage is that this page uses no JavaScript, but without the extension, the page will not work whatsoever without JavaScript.
+This improves performance, but it might be important for you if you *really* care about your privacy,
+and block as much JavaScript as you can.
 
 # Installation
 
