@@ -19,6 +19,8 @@ The browser requests an icon for every page, but since they don't have one, bloc
 
 # Comparison
 
+*This was tested in a private window.
+
 Without extension:
 
 <details>
@@ -35,6 +37,18 @@ Without extension:
 
 There's 81 requests in total, most of which (50+) are JavaScript requests.
 This is just unnecessary tracking and bloat.
+
+There's also a particularly nasty tracker which is activated every time you switch focus from the page.
+It logs:
+
+- What you viewed, although I don't know how specific this is.
+- When you viewed it.
+- How you viewed it (e.g. platform, screen size).
+- Who viewed it (what account).
+- If you have AdBlock.
+
+I deducted this from the information that was being sent, but the info was very clearly labeled.
+You can check this tracker if you go to the network log and search for `events`.
 
 ---
 
