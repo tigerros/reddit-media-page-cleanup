@@ -10,12 +10,12 @@
 
 # Features
 
-- Shows only the image file on `i.redd.it`, `preview.redd.it`, `external-preview.redd.it` and `reddit.com/media?url=IMAGE_URL` (only on Firefox) pages.
+- Shows only the image file on `i.redd.it` and `external-preview.redd.it` and `reddit.com/media?url=IMAGE_URL` (*only on Firefox*) pages.
 This improves loading speed, removes trackers and fixes the broken zooming.
 - Redirects `preview.redd.it` to the `i.redd.it` equivalent.
-This gets you the highest quality image, and you can download a PNG/JPEG instead of the default `preview.redd.it` WEBP (which is not a traditional image file).
+This gets you the highest quality image, and you can download a PNG/JPEG instead of the default `preview.redd.it` WEBP (which you most likely don't want).
 - Blocks an icon file request on the image file pages, since they don't have one.
-The browser requests an icon for every page, but since they don't have one, blocking is a *tiny* bit faster.
+The browser requests an icon for every page, but since they don't have one, blocking it is a *tiny* bit faster than sending the request and finding out that the destination doesn't exist.
 
 # Comparison
 
