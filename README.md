@@ -1,5 +1,3 @@
-<a style="position: fixed; bottom: 1em; right: 1em;" href="#table-of-contents">Back to top</a>
-
 ### Table of contents
 
 - [Features](#features)
