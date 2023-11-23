@@ -11,7 +11,7 @@
 # Features
 
 - Shows only the image file on `i.redd.it` and `external-preview.redd.it` and `reddit.com/media?url=IMAGE_URL` (*only on Firefox*) pages.
-This improves loading speed, removes trackers and fixes the broken zooming. When you click on a part of the image, it doesn't zoom in there. It always zooms in to the last zoomed in position (by default, the top-left), which is not how normal images behave.
+This improves loading speed, removes trackers and fixes the broken zooming. When you click on a part of the image, it doesn't zoom in on that part. It always zooms in to the last zoomed in position (by default, the top-left), which is not how normal images behave.
 - Redirects `preview.redd.it` to the `i.redd.it` equivalent.
 This gets you the highest quality image, and you can download a PNG/JPEG instead of the default `preview.redd.it` WEBP (which you most likely don't want).
 - Blocks an icon file request on the image file pages, since they don't have one.
